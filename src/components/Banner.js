@@ -75,12 +75,7 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    I’m a Software Engineer and Full Stack Developer. I spend my
-                    whole day, practically every day, experimenting with React,
-                    Vue, and Vanilla JavaScript; dabbling with PHP and Java; and
-                    inhaling a wide variety of potentially useless information
-                    through a few hundred RSS feeds. I build websites that
-                    delight and inform. I do it well.
+                    Experienced Software Engineer with over five years of expertise in designing, developing, and maintaining software products. Skilled in JavaScript, Typescript,Python and PHP, and well-versed in Agile methodologies. Demonstrates a track record of successfully delivering high-quality and scalable software solutions within budget and on schedule. Committed to continuous learning and innovation in the realm of software engineering.
                   </p>
                   <button onClick={() => console.log('connect')}>
                     <a
