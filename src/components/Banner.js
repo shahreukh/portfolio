@@ -75,7 +75,7 @@ export const Banner = () => {
                     </span>
                   </h1>
                   <p>
-                    Experienced Software Engineer with over five years of expertise in designing, developing, and maintaining software products. Skilled in JavaScript, Typescript,Python and PHP, and well-versed in Agile methodologies. Demonstrates a track record of successfully delivering high-quality and scalable software solutions within budget and on schedule. Committed to continuous learning and innovation in the realm of software engineering.
+                    With over six years of experience, I specialize in designing, developing, and maintaining software products, including solutions for aviation safety. I am proficient in JavaScript, TypeScript, Python, and PostgreSQL, with strong expertise in Agile methodologies. I have a proven track record of delivering high-quality, scalable software solutions on time and within budget, along with a commitment to continuous learning and innovation in software engineering and aeronautics.
                   </p>
                   <button onClick={() => console.log('connect')}>
                     <a
