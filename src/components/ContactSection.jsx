@@ -96,7 +96,10 @@ export const ContactSection = () => {
             </div>
             <div className="w-58 mt-10">
               {" "}
-              <img src="/logos/signature.png" alt="Logo" />
+              <img
+                src={import.meta.env.BASE_URL + "logos/signature.png"}
+                alt="Logo"
+              />
             </div>
             <div className="pt-8">
               {" "}

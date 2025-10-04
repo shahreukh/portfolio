@@ -6,7 +6,7 @@ const projects = [
     title: "Portfolio Page",
     description:
       "Personal portfolio site built with modern UI design principles.",
-    image: "/projects/project1.png",
+    image: import.meta.env.BASE_URL + "projects/project1.png",
     tags: ["React", "Tailwind", "Next.js"],
     demoUrl: "#",
     githubUrl: "https://github.com/shahreukh/react-portfolio",
@@ -16,7 +16,7 @@ const projects = [
     title: "LookUp Website",
     description:
       "Corporate portfolio site with sleek black-themed UI and responsive design.",
-    image: "/projects/project2.png",
+    image: import.meta.env.BASE_URL + "projects/project2.png",
     tags: ["React", "JavaScript", "CSS"],
     demoUrl: "#",
     githubUrl: "#",
@@ -26,7 +26,7 @@ const projects = [
     title: "Cactus Software",
     description:
       "Corporate site showcasing social media and digital services, built with React and Tailwind.",
-    image: "/projects/project3.png",
+    image: import.meta.env.BASE_URL + "projects/project3.png",
     tags: ["React", "Tailwind", "JavaScript"],
     demoUrl: "#",
     githubUrl: "#",
@@ -36,7 +36,7 @@ const projects = [
     title: "Admin Dashboard Panel",
     description:
       "Admin panel with React, Node.js, and MongoDB for managing users, posts, and projects efficiently.",
-    image: "/projects/project4.png",
+    image: import.meta.env.BASE_URL + "projects/project4.png",
     tags: ["React", "Node.js", "MongoDB", "TypeScript"],
     demoUrl: "#",
     githubUrl: "#",
@@ -46,7 +46,7 @@ const projects = [
     title: "DOSEV Foundation",
     description:
       "Multilingual NGO foundation site with donation and project management pages.",
-    image: "/projects/project5.png",
+    image: import.meta.env.BASE_URL + "projects/project5.png",
     tags: ["React", "Node.js", "Express", "PostgreSQL"],
     demoUrl: "#",
     githubUrl: "#",
@@ -56,7 +56,7 @@ const projects = [
     title: "Mental Creative Agency",
     description:
       "Creative agency showcase with animations and modern responsive layouts.",
-    image: "/projects/project6.png",
+    image: import.meta.env.BASE_URL + "projects/project6.png",
     tags: ["React", "Tailwind", "JavaScript", "Next.js"],
     demoUrl: "#",
     githubUrl: "#",
