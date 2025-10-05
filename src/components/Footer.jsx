@@ -4,7 +4,7 @@ export const Footer = () => {
   return (
     <footer
       id="footer"
-      className="py-4 sm:py-8 px-4 bg-card border-t border-border mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between"
+      className="py-8 px-4 bg-card border-t border-border mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between"
     >
       <div className="w-full sm:w-auto text-center sm:text-left">
         <p className="text-sm text-muted-foreground">
