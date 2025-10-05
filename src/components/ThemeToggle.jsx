@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { Moon, SunMedium } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -33,14 +33,14 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300 cursor-pointer",
-        "focus:outline-hidden"
+        "rounded-full transition-colors duration-300 cursor-pointer focus:outline-hidden"
       )}
+      aria-label="Toggle theme"
     >
       {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
+        <SunMedium className="h-5 w-5 sm:h-6 sm:w-6 text-yellow-300" />
       ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
+        <Moon className="h-5 w-5 sm:h-6 sm:w-6 text-blue-900" />
       )}
     </button>
   );

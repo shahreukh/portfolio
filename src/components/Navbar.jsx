@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
+  { name: "Home", href: "#hero" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Contact", href: "#contact" },
@@ -16,68 +16,96 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      if (!isMenuOpen) setIsScrolled(window.scrollY > 10);
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "Escape") setIsMenuOpen(false);
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
   }, []);
+
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
+        "fixed w-full z-50",
+        isMenuOpen
+          ? "bg-background"
+          : isScrolled
+          ? "py-4 bg-background/90 backdrop-blur-xl shadow-md"
+          : "py-5 bg-transparent"
       )}
     >
       <div className="container flex items-center justify-between">
+        {/* Logo */}
         <a
           className="text-xl font-bold text-primary flex items-center"
-          href="#home"
+          href="#hero"
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> Shahrukh Mirza </span>{" "}
+            <span className="text-glow text-foreground">Shahrukh Mirza</span>{" "}
             Portfolio
           </span>
         </a>
 
-        {/* desktop nav */}
-        <div className="hidden md:flex space-x-8">
-          {navItems.map((item, key) => (
+        {/* Desktop nav */}
+        <div className="hidden md:flex items-center space-x-6">
+          {navItems.map((item) => (
             <a
-              key={key}
+              key={item.name}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
             </a>
           ))}
+          <ThemeToggle />
         </div>
 
-        {/* mobile nav */}
+        {/* Mobile button */}
+        <div className="flex items-center md:hidden gap-1 z-50">
+          <ThemeToggle />
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(true)}
+            className="p-2 text-foreground cursor-pointer"
+            aria-label="Open Menu"
+          >
+            <Menu size={24} />
+          </button>
+        </div>
+      </div>
 
-        <button
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
-          aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
-        </button>
-
+      {isMenuOpen && (
         <div
-          className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
-            "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
-          )}
+          id="mobile-menu"
+          className="fixed inset-0 z-[1000] flex flex-col items-center justify-center 
+                     bg-background text-foreground md:hidden"
         >
-          <div className="flex flex-col space-y-8 text-xl">
-            {navItems.map((item, key) => (
+          <button
+            type="button"
+            onClick={() => setIsMenuOpen(false)}
+            className="absolute top-5 right-5 p-2 text-foreground cursor-pointer"
+            aria-label="Close Menu"
+          >
+            <X size={24} />
+          </button>
+
+          <div className="flex flex-col space-y-8 text-xl text-center">
+            {navItems.map((item) => (
               <a
-                key={key}
+                key={item.name}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                className="text-foreground/80 hover:text-primary"
                 onClick={() => setIsMenuOpen(false)}
               >
                 {item.name}
@@ -85,7 +113,7 @@ export const Navbar = () => {
             ))}
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 };
