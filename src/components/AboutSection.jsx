@@ -16,7 +16,7 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground text-justify">
-              I bring 6+ years of experience delivering enterprise-grade
+              I bring 7+ years of experience delivering enterprise-grade
               software solutions in <strong>aviation safety</strong> as well as
               across diverse IT sectors and technologies. Skilled in React,
               Next.js, Node.js, and Python, I specialize in building scalable,
