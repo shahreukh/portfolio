@@ -26,7 +26,7 @@ export const HeroSection = () => {
             </span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            Software Engineer with 6+ years of experience in full-stack
+            Software Engineer with 7+ years of experience in full-stack
             development and enterprise solutions, including projects in{" "}
             <strong>aviation safety</strong>. I focus on building scalable,
             high-quality software while leading teams with Agile practices.
